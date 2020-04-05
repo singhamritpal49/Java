@@ -29,6 +29,17 @@ public class Main {
         double mortgage = principal
                 * (monthlyInterest * Math.pow(1+ monthlyInterest, numberOfPayments))
                 / (Math.pow(1+ monthlyInterest, numberOfPayments) - 1);
+
+        System.out.print("Yearly Property Taxes: ");
+        int tax = scanner.nextInt();
+        int taxByMonth = tax / MONTH_IN_YEAR;
+
+        System.out.print("Yearly Insurance: ");
+        int insurance = scanner.nextInt();
+        int insuranceByMonth = insurance / MONTH_IN_YEAR;
+
+        mortgage = mortgage + taxByMonth + insuranceByMonth;
+
         String mortgageFormat = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Mortgage:" + mortgageFormat);
     }
