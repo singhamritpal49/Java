@@ -11,6 +11,5 @@ public class Main {
         String name = scanner.nextLine().trim();
         System.out.println("Your age " + name);
 
-
     }
 }
