@@ -18,6 +18,11 @@ public class Main {
         System.out.print("Principal: ");
         int principal = scanner.nextInt();
 
+        if(principal < 100) {
+            System.out.print("Please enter values greater than 100: ");
+            principal = scanner.nextInt();
+        }
+
         System.out.print("Annual Interest Rate: ");
         float annualIntRate = scanner.nextFloat();
         float monthlyInterest  = annualIntRate / PERCENT / MONTH_IN_YEAR;
@@ -25,6 +30,8 @@ public class Main {
         System.out.print("Period: ");
         int years = scanner.nextInt();
         int numberOfPayments = years * MONTH_IN_YEAR;
+
+
 
         double mortgage = principal
                 * (monthlyInterest * Math.pow(1+ monthlyInterest, numberOfPayments))
